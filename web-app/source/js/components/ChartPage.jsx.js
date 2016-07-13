@@ -34,8 +34,10 @@ class ChartPage extends Component {
     return (
       <div className="vote-results">
         <h1 className="question-title">{this.props.title}</h1>
-        <canvas className="voteResults"></canvas>
-      </div>
+        <div className="chart-wrapper">
+          <canvas className="voteResults"></canvas>
+        </div>
+	  </div>
     );
   }
 
