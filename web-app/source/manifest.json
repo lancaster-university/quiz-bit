@@ -1,13 +1,13 @@
 {
-	"name" : "quiz:bit",
-	"description" : "",
-	"version" : "0.5",
-	"manifest_version" : 2,
-	"app" : {
-		"background" : {
-			"scripts" : ["js/background.js"]
-		}
-	},
+  "name" : "quiz:bit",
+  "description" : "",
+  "version" : "0.5",
+  "manifest_version" : 2,
+  "app" : {
+    "background" : {
+      "scripts" : ["js/background.js"]
+    }
+  },
   "icons": { "128": "img/icon-128.png" },
-	"permissions" : [ "serial", "storage", "unlimitedStorage"]
+  "permissions" : [ "serial", "storage", "unlimitedStorage"]
 }
