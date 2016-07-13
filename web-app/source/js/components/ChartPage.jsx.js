@@ -33,7 +33,7 @@ class ChartPage extends Component {
   render() {
     return (
       <div className="vote-results">
-        <h1 className="question-title">Results</h1>
+        <h1 className="question-title">{this.props.title}</h1>
         <canvas className="voteResults"></canvas>
       </div>
     );
@@ -42,6 +42,7 @@ class ChartPage extends Component {
 }
 
 ChartPage.propTypes = {
+  title:    React.PropTypes.string.isRequired,
   answers:    React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
   votes:      React.PropTypes.arrayOf(React.PropTypes.number).isRequired
 }

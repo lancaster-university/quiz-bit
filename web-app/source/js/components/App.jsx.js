@@ -170,7 +170,7 @@ class App extends Component {
 
       case "results":
         page =
-          <ChartPage answers={this.state.answers} votes={this.state.answerCounts}/>
+          <ChartPage title={this.state.question} answers={this.state.answers} votes={this.state.answerCounts}/>
         buttons =
           <AppButton
             active={true}
