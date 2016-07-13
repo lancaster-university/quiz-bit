@@ -29,7 +29,7 @@ function Serial(dataCallback, connectCallback) {
 
   /* Handles updating the connection state for common d/c errors */
   function onError(err) {
-    if (!(err.error === "device_lost") && !(err.error === "disconnected") && !(err.error === "break"))
+    if (!(err.error === "device_lost") && !(err.error === "disconnected") && !(err.error === "break") && !(err.error === "system_error"))
       throw new Error(err.error);
     connected = false;
     connectCallback(connected);
