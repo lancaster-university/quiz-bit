@@ -25,7 +25,7 @@ class Question extends Component {
       <div className="question-box">
         <input
           readOnly={!this.props.edit}
-          onChange={this.props.handlers.editQuestion}
+          onChange={this.props.handlers.editQuestion.bind(null, this.props.index)}
           value={this.props.title}
           className="question-title animated"
         />
