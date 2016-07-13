@@ -2,6 +2,12 @@
 
 micro:bit programs and a matching application for providing a quiz-voter-style service using micro:bits as the controls.
 
+# Downloads
+
+Download the chrome application now from the [Google Chrome store](https://chrome.google.com/webstore/detail/quizbit/hfnanbphehfnlcpkelfnkmfdljphlmna?hl=en-US).
+
+Download the micro:bit hex files `QuizMaster.hex` and `Quizzer.hex` as a zip file from our [microbit-docs](https://lancaster-university.github.io/microbit-docs/resources/quiz-bit.zip) page. Alternately, clone this git repository, and navigate to `prebuilt`.
+
 ## How it Works
 
 Quiz:bit utilises the micro:bit's radio and serial port connectivity to provide an *almost* wireless voting system.
