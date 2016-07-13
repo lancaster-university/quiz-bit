@@ -61,6 +61,7 @@ h1 {
 }
 
 .question-box {
+  width: 100%;
   text-align: center;
   flex-grow: 1;
 }
@@ -273,7 +274,7 @@ input.answer-label:hover {
 .fixed-return-btn {
   position: fixed;
   right: 40px;
-  bottom: 40px;
+  bottom: 20px;
   float: none;
 }
 

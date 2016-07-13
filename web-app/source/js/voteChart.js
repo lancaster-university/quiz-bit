@@ -27,6 +27,7 @@ export function runChart() {
       }]
     },
     options: {
+      maintainAspectRatio: false,
       responsive: true,
       scales: {
         yAxes: [{
