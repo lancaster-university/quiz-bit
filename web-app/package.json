@@ -26,8 +26,8 @@
     "title": "quiz:bit",
     "icon": "img/icon-128.png",
     "frame": true,
-    "position": "mouse",
-    "min_width": 900,
+    "position": "center",
+    "min_width": 800,
     "min_height": 600
   },
   "webkit": {
