@@ -246,14 +246,15 @@ input.answer-label:hover {
   font-family: "OpenSans-Semibold";
   transition: transform 0.1s;
   float: right;
-  margin-top: 45px;
+  margin: 20px 5px;
+  cursor: pointer;
 }
 
 .btn:hover:not(:disabled) {
   transform: scale(1.05);
 }
 
-.btn:hover:not(:disabled):not(.start-btn):not(.stop-btn) {
+.btn:hover:not(:disabled):not(.start-btn):not(.stop-btn):not(.export-btn) {
   color: #636161;
   background-color: #f1f1f1;
   cursor: pointer;
@@ -276,6 +277,11 @@ input.answer-label:hover {
 
 .stop-btn {
   background-color: #ff6565;
+  color: white;
+}
+
+.export-btn {
+  background-color: #03A9F4;
   color: white;
 }
 

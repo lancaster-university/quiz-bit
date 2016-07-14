@@ -9,5 +9,5 @@
     }
   },
   "icons": { "128": "img/icon-128.png" },
-  "permissions" : [ "serial", "storage", "unlimitedStorage"]
+  "permissions" : [ "serial", "storage", "unlimitedStorage", "notifications", {"fileSystem": [ "write" ]} ]
 }

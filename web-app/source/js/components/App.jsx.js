@@ -6,6 +6,7 @@ import ChartPage from './ChartPage'
 import Question from './Question'
 import VoteCounter from './VoteCounter'
 import Serial from '../classes/Serial.js'
+import { exportValuesToCsv } from '../voteChart'
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class App extends Component {
       page: "question",                                 // current app page
       question: "Your Question Here",
       answers: ["Answer 1", "Answer 2", "Answer 3..."],
-      answerCounts: [0, 0, 0, 0],
+      answerCounts: [0, 0, 0],
       voters: {},                                       // an object used to store the unique micro:bit serials and prevent duplicate voting
       questionId: -1
     }
@@ -172,12 +173,20 @@ class App extends Component {
         page =
           <ChartPage title={this.state.question} answers={this.state.answers} votes={this.state.answerCounts}/>
         buttons =
-          <AppButton
-            active={true}
-            text="Return"
-            classNames="fixed-return-btn"
-            handleClick={this.setPage.bind(this, "question")}
-          />
+          <div className="bottom-container">
+            <AppButton
+              active={!this.state.voting && (this.state.questionId > (-1))}
+              text="Export"
+              classNames="export-btn"
+              handleClick={exportValuesToCsv.bind(null, this.state.question, this.state.answers, this.state.answerCounts)}
+            />
+            <AppButton
+              active={true}
+              text="Return"
+              classNames=""
+              handleClick={this.setPage.bind(this, "question")}
+            />
+          </div>
         break;
 
       default:
