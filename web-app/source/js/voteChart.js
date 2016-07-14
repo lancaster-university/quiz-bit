@@ -57,10 +57,13 @@ export function exportValuesToCsv(question, answers, votes) {
     err.message += "\nYou may not have write access to the selected folder";
     notify(err);
   }
+
+  question = question.replace(/\W+/g, '-').toLowerCase();
+
   chrome.fileSystem.chooseEntry(
     {
       type: 'saveFile',
-      suggestedName: 'quiz-bit-results',
+      suggestedName: question,
       accepts: [
         {
           // force a CSV extension
