@@ -58,12 +58,13 @@ export function exportValuesToCsv(question, answers, votes) {
     notify(err);
   }
 
-  question = question.replace(/\W+/g, '-').toLowerCase();
+  var fileName = question.replace(/\W+/g, '-').toLowerCase(); // replace invalid characters
+  fileName = fileName.replace(/(^-|-$)/g, ""); // remove any preceding or trailing -'s
 
   chrome.fileSystem.chooseEntry(
     {
       type: 'saveFile',
-      suggestedName: question,
+      suggestedName: fileName,
       accepts: [
         {
           // force a CSV extension
