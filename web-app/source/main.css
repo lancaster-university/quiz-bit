@@ -309,8 +309,39 @@ input[readonly] {
   width: 150px;
 }
 
+.flash-indicator {
+  width: 8px;
+  height: 8px;
+  margin-right: 5px;
+  border-radius: 6px;
+  border: solid 1px lightgrey;
+  display: inline-block;
+  background-color: transparent;
+  vertical-align: middle;
+}
+
+.blinking {
+  animation: blink-animation .15s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    background-color: orange;
+  }
+}
+
 .animated {
   transition: all 0.1s ease;
+}
+
+.flash-controls {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.flash-controls > select {
+  border: none;
 }
 
 .connection-status {

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import ConnectionStatus from './ConnectionStatus'
 import AppButton from './AppButton'
 import ChartPage from './ChartPage'
+import FlashControls from './FlashControls'
 import Question from './Question'
 import VoteCounter from './VoteCounter'
 import Serial from '../classes/Serial.js'
@@ -14,6 +15,7 @@ class App extends Component {
     this.state = {
       voting: false,                                    // is a vote current underway
       editing: false,                                   // whether we're currently in question+answer editing mode
+      flashing: false,                                  // whether we're flashing a micro:bit
       votes: 0,                                         // how many unique votes we've received
       mbConnected: false,                               // whether a valid Quizmaster micro:bit is connected
       page: "question",                                 // current app page
@@ -99,6 +101,15 @@ class App extends Component {
     })
   }
 
+  toggleFlashState(state) {
+    if (typeof state != "boolean") {
+      state = !this.state.flashing;
+    }
+    this.setState({
+      flashing: state
+    })
+  }
+
   toggleEdit() {
     this.setState({
       editing: !this.state.editing
@@ -161,7 +172,7 @@ class App extends Component {
               handleClick={this.toggleEdit.bind(this)}
             />
             <AppButton
-              active={!this.state.editing && this.state.mbConnected}
+              active={!this.state.editing && !this.state.flashing && this.state.mbConnected}
               text={this.state.voting ? "Stop Vote" : "Start Vote"}
               handleClick={this.toggleVote.bind(this)}
               classNames={this.state.voting ? "stop-btn animated" : "start-btn animated"}
@@ -196,6 +207,11 @@ class App extends Component {
     }
     return (
       <div>
+        <FlashControls
+          flashing={this.state.flashing}
+          canFlash={!this.state.voting && !this.state.flashing && !this.state.editing}
+          stateHandler={this.toggleFlashState.bind(this)}
+        />
         <ConnectionStatus connected={this.state.mbConnected}/>
         <div className="wrapper">
           {page}
