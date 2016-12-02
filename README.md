@@ -20,6 +20,10 @@ Quiz:bit utilises the micro:bit's radio and serial port connectivity to provide 
 
   Once a question is received the Quizzer micro:bits will display a letter. Use the A and B buttons to cycle through the letter options and press them both simultaneously to lock in your answer.
 
+### Note: Windows Driver
+
+MACOSX and Linux systems will be able to communicate with the Quizmaster micro:bit out of the box. Users with Windows systems (below Windows 10) will need to install the [serial driver](https://developer.mbed.org/handbook/Windows-serial-configuration) before the Quiz:bit app will be able to detect their micro:bit. Follow the instructions on this download page carefully. Your micro:bit (mbed) **must be plugged in during installation**.
+
 ## Building
 
 For the C++ micro:bit programs, simply use the hex files provided under prebuilt, or take a look at setting up an offline-toolchain for the micro:bit with [yotta](http://lancaster-university.github.io/microbit-docs/offline-toolchains/#yotta).
